@@ -1,0 +1,20 @@
+<h2> 
+  
+  {{bandMember.name | uppercase}} Details
+</h2>
+<div>
+  <span>
+    ID: {{bandMember.id}}
+  </span>
+</div>
+<div>  
+  <span>
+    Name: {{bandMember.name}}
+  </span>
+</div>
+<div>
+  <label>
+    name:
+    <input [(ngModel)]='bandMember.name' plaveholder='name' />
+  </label>
+</div>

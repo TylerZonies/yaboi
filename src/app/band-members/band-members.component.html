@@ -1,20 +1,34 @@
-<h2> 
-  
-  {{bandMember.name | uppercase}} Details
-</h2>
-<div>
-  <span>
-    ID: {{bandMember.id}}
-  </span>
-</div>
-<div>  
-  <span>
-    Name: {{bandMember.name}}
-  </span>
-</div>
-<div>
-  <label>
-    name:
-    <input [(ngModel)]='bandMember.name' plaveholder='name' />
-  </label>
+<h2>Wetzone</h2>
+
+<ul class='heroes'>
+  <li *ngFor='let bandMember of bandMembers'
+  [class.selected]='bandMember === selectedMember'
+  (click)='onSelect(bandMember)' >
+    <span class='badge'>
+      {{bandMember.id}}
+    </span>
+    {{bandMember.name}}
+  </li>
+</ul>
+<div *ngIf='selectedMember'>
+  <h2> 
+
+    {{selectedMember.name | uppercase}} Details
+  </h2>
+  <div>
+    <span>
+      ID: {{selectedMember.id}}
+    </span>
+  </div>
+  <div>  
+    <span>
+      Name: {{selectedMember.name}}
+    </span>
+  </div>
+  <div>
+    <label>
+      name:
+      <input [(ngModel)]='selectedMember.name' placeholder='name' />
+    </label>
+  </div>
 </div>
